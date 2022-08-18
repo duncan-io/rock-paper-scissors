@@ -31,4 +31,38 @@ function getComputerChoice (){
 
 }
 
-  playerSelection();
+function playRps () {
+   
+    player = playerSelection();
+    computer = getComputerChoice();
+    console.log("You went with " + player);
+    console.log("The computer decided on " + computer);
+
+    switch (true) {
+        case (player === computer):
+            console.log("It's a tie!")
+            break;
+        case (player == "Rock" && computer == "Paper"):
+            console.log("You lose!")
+            break;
+        case (player == "Rock" && computer == "Scissors"):
+            console.log("You win!")
+            break;
+        case (player == "Paper" && computer == "Rock"):
+            console.log("You win!")
+            break;
+        case (player == "Paper" && computer == "Scissors"):
+            console.log("You lose!")
+            break;
+        case (player == "Scissors" && computer == "Rock"):
+            console.log("You lose!")
+            break;
+        case (player == "Scissors" && computer == "Paper"):
+            console.log ("You win!")
+            break;
+        default:
+            console.log("Someting went wrong and you probably lost")
+    }
+}
+
+playRps();
