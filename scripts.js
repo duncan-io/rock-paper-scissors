@@ -31,6 +31,8 @@ function getComputerChoice (){
 
 }
 
+//Collect choices, compare, return results
+
 function playRps () {
    
     player = playerSelection();
