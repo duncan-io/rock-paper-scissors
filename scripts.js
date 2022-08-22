@@ -42,29 +42,42 @@ function playRps () {
 
     switch (true) {
         case (player === computer):
-            console.log("It's a tie!")
+            return ("It's a tie!")
             break;
         case (player == "Rock" && computer == "Paper"):
-            console.log("You lose!")
+            return ("You lose!")
             break;
         case (player == "Rock" && computer == "Scissors"):
-            console.log("You win!")
+            return ("You win!")
             break;
         case (player == "Paper" && computer == "Rock"):
-            console.log("You win!")
+            return ("You win!")
             break;
         case (player == "Paper" && computer == "Scissors"):
-            console.log("You lose!")
+            return ("You lose!")
             break;
         case (player == "Scissors" && computer == "Rock"):
-            console.log("You lose!")
+            return ("You lose!")
             break;
         case (player == "Scissors" && computer == "Paper"):
-            console.log ("You win!")
+            return  ("You win!")
             break;
         default:
-            console.log("Someting went wrong and you probably lost")
+            return ("Someting went wrong and you probably lost")
     }
 }
 
-playRps();
+
+for (let i = 0; i < 5; i++){
+
+    function game(){
+        let result = playRps();
+        console.log (result)
+     }
+
+     game();
+
+}
+
+
+
