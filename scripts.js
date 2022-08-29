@@ -1,13 +1,13 @@
 
 
-//Get player choice
-function playerSelection(){
-    let playerChoice = prompt("Rock, paper, or scissors?");
-    first = playerChoice.slice(0,1);
-    rest = playerChoice.substring(1);
-    choice = first.toUpperCase() + rest.toLowerCase()
-    return choice
-}
+// Get player choice (old version)
+// function playerSelection(){
+//     let playerChoice = prompt("Rock, paper, or scissors?");
+//     first = playerChoice.slice(0,1);
+//     rest = playerChoice.substring(1);
+//     choice = first.toUpperCase() + rest.toLowerCase()
+//     return choice
+// }
 
 
 //Get computer choice
@@ -33,9 +33,9 @@ function getComputerChoice (){
 
 //Collect choices, compare, return results
 
-function playRps () {
+function playRps (playerChoice) {
    
-    player = playerSelection();
+    player = playerChoice;
     computer = getComputerChoice();
     console.log("You went with " + player);
     console.log("The computer decided on " + computer);
@@ -67,11 +67,16 @@ function playRps () {
     }
 }
 
+//Select Buttons and add click event listeners
 const buttons = document.querySelectorAll('button');
+let comScore = document.getElementById('comScore');
+let manScore = document.getElementById('manScore');
 
 buttons.forEach((button) => {
-    button.addEventListener(click, () => {
-        console.log("button")
+    button.addEventListener('click', () => {
+        let playerChoice = button.textContent;
+        playRps(playerChoice);
+        
     })
 })
 
