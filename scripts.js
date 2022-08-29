@@ -67,17 +67,26 @@ function playRps () {
     }
 }
 
+const buttons = document.querySelectorAll('button');
 
-for (let i = 0; i < 5; i++){
+buttons.forEach((button) => {
+    button.addEventListener(click, () => {
+        console.log("button")
+    })
+})
 
-    function game(){
-        let result = playRps();
-        console.log (result)
-     }
 
-     game();
+// Play 5 rounds code
+// for (let i = 0; i < 5; i++){
 
-}
+//     function game(){
+//         let result = playRps();
+//         console.log (result)
+//      }
+
+//      game();
+
+// }
 
 
 

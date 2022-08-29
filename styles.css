@@ -1,0 +1,58 @@
+body {
+    background-image: url(images/jousting-pic.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 90vh;
+    width: 90vw;
+    background-color: rgba(164, 159, 162, 0.47);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.selection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 50px;
+}
+
+.man, .machine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.main h1, .main h2 {
+    font-family: 'Uncial Antiqua', cursive;
+}
