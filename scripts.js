@@ -81,6 +81,9 @@ let manScore = document.getElementById('manScore');
 let results = document.getElementById('results');
 let comResults = document.getElementById('comResults');
 let winAndLose = document.getElementById('winAndLose');
+let grandResults = document.getElementById ('grandResults')
+let gamesPlayed = document.getElementById('gamesPlayed');
+let numGames = 0
 let humanScore = 0;
 let machineScore = 0;
 
@@ -88,20 +91,28 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         let playerChoice = button.textContent;
         let outcome = playRps(playerChoice);
+        numGames++
+        gamesPlayed.textContent = "Games played " + numGames;
 
         results.textContent = "You went with " + outcome[0];
         comResults.textContent = "The Machine returned fire with " + outcome[1];
         winAndLose.textContent = outcome[2];
 
-        if (outcome[2] == "You win!"){
-            humanScore++
-            manScore.textContent = humanScore;
-        } else if (outcome[2] == "You lose!"){
-            machineScore++;
-            comScore.textContent = machineScore;
-        }
-        
-    })
+
+            if (outcome[2] == "You win!"){
+                humanScore++
+                manScore.textContent = humanScore;
+                if (humanScore == 5){
+                    grandResults.textContent = "Humans Win!"
+                }
+            } else if (outcome[2] == "You lose!"){
+                machineScore++;
+                comScore.textContent = machineScore; 
+                if (machineScore == 5){
+                    grandResults.textContent = "Machines Win!"
+                }       
+            }
+})
 })
 
 
