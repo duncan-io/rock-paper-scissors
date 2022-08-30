@@ -37,30 +37,37 @@ function playRps (playerChoice) {
    
     player = playerChoice;
     computer = getComputerChoice();
-    console.log("You went with " + player);
     console.log("The computer decided on " + computer);
+    let outcome = [player, computer]
 
     switch (true) {
         case (player === computer):
-            return ("It's a tie!")
+            outcome.push("It's a tie!");
+            return outcome;
             break;
         case (player == "Rock" && computer == "Paper"):
-            return ("You lose!")
+            outcome.push("You lose!");
+            return outcome;
             break;
         case (player == "Rock" && computer == "Scissors"):
-            return ("You win!")
+            outcome.push("You win!");
+            return outcome;
             break;
         case (player == "Paper" && computer == "Rock"):
-            return ("You win!")
+            outcome.push("You win!");
+            return outcome;
             break;
         case (player == "Paper" && computer == "Scissors"):
-            return ("You lose!")
+            outcome.push("You lose!")
+            return outcome;
             break;
         case (player == "Scissors" && computer == "Rock"):
-            return ("You lose!")
+            outcome.push("You lose!");
+            return outcome;
             break;
         case (player == "Scissors" && computer == "Paper"):
-            return  ("You win!")
+            outcome.push("You win!");
+            return outcome;
             break;
         default:
             return ("Someting went wrong and you probably lost")
@@ -71,14 +78,33 @@ function playRps (playerChoice) {
 const buttons = document.querySelectorAll('button');
 let comScore = document.getElementById('comScore');
 let manScore = document.getElementById('manScore');
+let results = document.getElementById('results');
+let comResults = document.getElementById('comResults');
+let winAndLose = document.getElementById('winAndLose');
+let humanScore = 0;
+let machineScore = 0;
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         let playerChoice = button.textContent;
-        playRps(playerChoice);
+        let outcome = playRps(playerChoice);
+
+        results.textContent = "You went with " + outcome[0];
+        comResults.textContent = "The Machine returned fire with " + outcome[1];
+        winAndLose.textContent = outcome[2];
+
+        if (outcome[2] == "You win!"){
+            humanScore++
+            manScore.textContent = humanScore;
+        } else if (outcome[2] == "You lose!"){
+            machineScore++;
+            comScore.textContent = machineScore;
+        }
         
     })
 })
+
+
 
 
 // Play 5 rounds code

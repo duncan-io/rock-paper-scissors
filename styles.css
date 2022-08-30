@@ -53,6 +53,19 @@ h1, h2, h3, p {
     padding: 0;
 }
 
-.main h1, .main h2 {
+.main h1, .main h2, .main h3 {
     font-family: 'Uncial Antiqua', cursive;
+}
+
+.resultsBox {
+    padding: 15px;
+    height: 100px;
+}
+
+.resultsBox p {
+    margin: 10px;
+}
+
+#winAndLose{
+    height: 50px;
 }
